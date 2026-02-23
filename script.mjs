@@ -6,7 +6,17 @@
 
 import { getUserIds } from "./common.mjs";
 
-window.onload = function () {
-  const users = getUserIds();
-  document.querySelector("body").innerText = `There are ${users.length} users`;
-};
+const select = document.getElementById("user-select");
+
+for (const id of getUserIds()) {
+  const option = document.createElement("option");
+  option.value = id;
+  option.textContent = `User ${id}`;
+  select.appendChild(option);
+}
+
+select.addEventListener("change", function () {
+  const userId = select.value;
+  const agenda = document.getElementById("agenda");
+  agenda.textContent = `No topics yet for user ${userId}`;
+});
