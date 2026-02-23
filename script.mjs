@@ -14,3 +14,8 @@ for (const id of getUserIds()) {
   option.textContent = `User ${id}`;
   select.appendChild(option);
 }
+
+select.addEventListener("change", function () {
+  const userId = select.value;
+  console.log(`Selected user ID: ${userId}`);
+});
