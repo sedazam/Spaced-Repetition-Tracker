@@ -8,9 +8,9 @@ import { getUserIds } from "./common.mjs";
 
 const select = document.getElementById("user-select");
 
-for (const userId of getUserIds()) {
+for (const id of getUserIds()) {
   const option = document.createElement("option");
-  option.value = userId;
+  option.value = id;
   option.textContent = `User ${id}`;
   select.appendChild(option);
 }
