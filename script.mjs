@@ -17,5 +17,6 @@ for (const id of getUserIds()) {
 
 select.addEventListener("change", function () {
   const userId = select.value;
-  console.log(`Selected user ID: ${userId}`);
+  const agenda = document.getElementById("agenda");
+  agenda.textContent = `No topics yet for user ${userId}`;
 });
