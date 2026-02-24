@@ -19,8 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   select.addEventListener("change", function () {
     const userId = select.value;
-    const agenda = document.getElementById("agenda");
-    agenda.textContent = `No topics yet for user ${userId}`;
+    renderAgenda(userId);
   });
 
   const dateInput = document.getElementById("date-input");
