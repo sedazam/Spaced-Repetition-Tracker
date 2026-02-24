@@ -36,10 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
     agenda.appendChild(list);
   }
 
-  agenda.innerHTML = "";
-  agenda.appendChild(list);
-}
-
   select.addEventListener("change", function () {
     const userId = select.value;
     renderAgenda(userId);
