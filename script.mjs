@@ -64,6 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     addData(userId, items);
-    console.log("Saved!", getData(userId));
+    topicInput.value = "";
+    renderAgenda(userId);
   });
 });
