@@ -84,10 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Please enter a topic name.");
       return;
     }
-    if (!date) {
-      alert("Please select a date.");
-      return;
-    }
     const revisionDates = getRevisionDates(date);
 
     const items = revisionDates.map(function (revDate) {
