@@ -6,38 +6,40 @@
 
 import { getUserIds } from "./common.mjs";
 
-const select = document.getElementById("user-select");
+document.addEventListener("DOMContentLoaded", function () {
+  const select = document.getElementById("user-select");
 
-for (const id of getUserIds()) {
-  const option = document.createElement("option");
-  option.value = id;
-  option.textContent = `User ${id}`;
-  select.appendChild(option);
-}
+  for (const id of getUserIds()) {
+    const option = document.createElement("option");
+    option.value = id;
+    option.textContent = `User ${id}`;
+    select.appendChild(option);
+  }
 
-select.addEventListener("change", function () {
-  const userId = select.value;
-  const agenda = document.getElementById("agenda");
-  agenda.textContent = `No topics yet for user ${userId}`;
-});
+  select.addEventListener("change", function () {
+    const userId = select.value;
+    const agenda = document.getElementById("agenda");
+    agenda.textContent = `No topics yet for user ${userId}`;
+  });
 
-const dateInput = document.getElementById("date-input");
-const today = new Date();
-const year = today.getFullYear();
-const month = String(today.getMonth() + 1).padStart(2, "0");
-const day = String(today.getDate()).padStart(2, "0");
-dateInput.value = `${year}-${month}-${day}`;
+  const dateInput = document.getElementById("date-input");
+  const today = new Date();
+  const year = today.getFullYear();
+  const month = String(today.getMonth() + 1).padStart(2, "0");
+  const day = String(today.getDate()).padStart(2, "0");
+  dateInput.value = `${year}-${month}-${day}`;
 
-const form = document.getElementById("topic-form");
-const topicInput = document.getElementById("topic-input");
+  const form = document.getElementById("topic-form");
+  const topicInput = document.getElementById("topic-input");
 
-form.addEventListener("submit", function (event) {
-  event.preventDefault();
-  const topic = topicInput.value;
-  const date = dateInput.value;
-  const userId = select.value;
+  form.addEventListener("submit", function (event) {
+    event.preventDefault();
+    const topic = topicInput.value;
+    const date = dateInput.value;
+    const userId = select.value;
 
-  console.log("User:", userId);
-  console.log("Topic:", topic);
-  console.log("Date:", date);
+    console.log("User:", userId);
+    console.log("Topic:", topic);
+    console.log("Date:", date);
+  });
 });
