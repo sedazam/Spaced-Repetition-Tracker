@@ -76,6 +76,18 @@ document.addEventListener("DOMContentLoaded", function () {
     const date = dateInput.value;
     const userId = select.value;
 
+    if (!userId) {
+      alert("Please select a user first!.");
+      return;
+    }
+    if (!topic) {
+      alert("Please enter a topic name.");
+      return;
+    }
+    if (!date) {
+      alert("Please select a date.");
+      return;
+    }
     const revisionDates = getRevisionDates(date);
 
     const items = revisionDates.map(function (revDate) {
