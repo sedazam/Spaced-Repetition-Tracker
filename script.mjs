@@ -22,13 +22,23 @@ document.addEventListener("DOMContentLoaded", function () {
     const data = getData(userId) || [];
     agenda.innerHTML = "";
 
-    if (data.length === 0) {
-      agenda.textContent = `No topics yet for user ${userId}`;
+    const today = new Date().toISOString().split("T")[0];
+
+    const futureItems = data
+      .filter(function (item) {
+        return item.date >= today;
+      })
+      .sort(function (a, b) {
+        return a.date.localeCompare(b.date);
+      });
+
+    if (futureItems.length === 0) {
+      agenda.textContent = "No upcoming topics for user " + userId;
       return;
     }
 
     const list = document.createElement("ul");
-    for (const item of data) {
+    for (const item of futureItems) {
       const listItem = document.createElement("li");
       listItem.textContent = `${item.topic} - ${item.date}`;
       list.appendChild(listItem);
