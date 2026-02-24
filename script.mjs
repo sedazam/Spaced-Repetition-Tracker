@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function renderAgenda(userId) {
     const agenda = document.getElementById("agenda");
-    const data = getData(userId);
+    const data = getData(userId) || [];
     agenda.innerHTML = "";
 
     if (data.length === 0) {
