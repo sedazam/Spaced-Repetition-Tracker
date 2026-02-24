@@ -38,13 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const topic = topicInput.value;
     const date = dateInput.value;
     const userId = select.value;
+  });
+  const revisionDates = getRevisionDates(date);
 
-   const revisionDates = getRevisionDates(date);
+  const items = revisionDates.map(function (revDate) {
+    return { topic, date: revDate };
+  });
 
-   const items = revisionDates.map(function(revDate) {
-     return { topic, date: revDate };
-   });
-
-   addData(userId, items);
-   console.log("Saved!"), getData(userId);
+  addData(userId, items);
+  (console.log("Saved!"), getData(userId));
 });
