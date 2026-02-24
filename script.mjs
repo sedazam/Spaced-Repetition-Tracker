@@ -17,6 +17,29 @@ document.addEventListener("DOMContentLoaded", function () {
     select.appendChild(option);
   }
 
+  function renderAgenda(userId) {
+    const agenda = document.getElementById("agenda");
+    const data = getData(userId);
+    agenda.innerHTML = "";
+
+    if (data.length === 0) {
+      agenda.textContent = `No topics yet for user ${userId}`;
+      return;
+    }
+
+    const list = document.createElement("ul");
+    for (const item of data) {
+      const listItem = document.createElement("li");
+      listItem.textContent = `${item.topic} - ${item.date}`;
+      list.appendChild(listItem);
+    }
+    agenda.appendChild(list);
+  }
+
+  agenda.innerHTML = "";
+  agenda.appendChild(list);
+}
+
   select.addEventListener("change", function () {
     const userId = select.value;
     renderAgenda(userId);
