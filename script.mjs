@@ -29,8 +29,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const day = String(today.getDate()).padStart(2, "0");
   dateInput.value = `${year}-${month}-${day}`;
 
-  const form = document.getElementById("topic-form");
-  const topicInput = document.getElementById("topic-input");
+  const form = document.getElementById("add-topic-form");
+  const topicInput = document.getElementById("topic-name");
 
   form.addEventListener("submit", function (event) {
     event.preventDefault();
