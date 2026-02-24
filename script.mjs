@@ -40,7 +40,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const list = document.createElement("ul");
     for (const item of futureItems) {
       const listItem = document.createElement("li");
-      listItem.textContent = `${item.topic} - ${item.date}`;
+      const [year, month, day] = item.date.split("-").map(Number);
+      const displayDate = new Date(year, month - 1, day).toLocaleDateString(
+        "en-GB",
+        {
+          day: "numeric",
+          month: "long",
+          year: "numeric",
+        },
+      );
+      listItem.textContent = `${item.topic} - ${displayDate}`;
       list.appendChild(listItem);
     }
     agenda.appendChild(list);
