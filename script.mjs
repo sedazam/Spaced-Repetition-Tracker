@@ -27,3 +27,17 @@ const year = today.getFullYear();
 const month = String(today.getMonth() + 1).padStart(2, "0");
 const day = String(today.getDate()).padStart(2, "0");
 dateInput.value = `${year}-${month}-${day}`;
+
+const form = document.getElementById("topic-form");
+const topicInput = document.getElementById("topic-input");
+
+form.addEventListener("submit", function (event) {
+  event.preventDefault();
+  const topic = topicInput.value;
+  const date = dateInput.value;
+  const userId = select.value;
+
+  console.log("User:", userId);
+  console.log("Topic:", topic);
+  console.log("Date:", date);
+});
