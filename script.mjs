@@ -4,7 +4,7 @@
 // Note that when running locally, in order to open a web page which uses modules, you must serve the directory over HTTP e.g. with https://www.npmjs.com/package/http-server
 // You can't open the index.html file using a file:// URL.
 
-import { getUserIds } from "./common.mjs";
+import { getUserIds, getRevisionDates } from "./common.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
   const select = document.getElementById("user-select");
@@ -41,5 +41,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("User:", userId);
     console.log("Topic:", topic);
     console.log("Date:", date);
+    console.log("Revision Dates:", getRevisionDates(date));
   });
 });
