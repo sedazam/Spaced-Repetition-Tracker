@@ -20,3 +20,10 @@ select.addEventListener("change", function () {
   const agenda = document.getElementById("agenda");
   agenda.textContent = `No topics yet for user ${userId}`;
 });
+
+const dateInput = document.getElementById("date-input");
+const today = new Date();
+const year = today.getFullYear();
+const month = String(today.getMonth() + 1).padStart(2, "0");
+const day = String(today.getDate()).padStart(2, "0");
+dateInput.value = `${year}-${month}-${day}`;
