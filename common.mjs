@@ -6,7 +6,7 @@ export function getRevisionDates(dateString) {
   const [year, month, day] = dateString.split("-").map(Number);
 
   function addDays(y, m, d, days) {
-    const date = new Date(year, month - 1, days);
+    const date = new Date(y, m - 1, d + days);
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
   }
 
