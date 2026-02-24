@@ -5,6 +5,7 @@
 // You can't open the index.html file using a file:// URL.
 
 import { getUserIds, getRevisionDates } from "./common.mjs";
+import { getData, addData } from "./storage.mjs";
 
 document.addEventListener("DOMContentLoaded", function () {
   const select = document.getElementById("user-select");
@@ -38,9 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const date = dateInput.value;
     const userId = select.value;
 
-    console.log("User:", userId);
-    console.log("Topic:", topic);
-    console.log("Date:", date);
-    console.log("Revision Dates:", getRevisionDates(date));
-  });
+   const revisionDates = getRevisionDates(date);
+
+   const items = revisionDates.map(function(revDate) {
+     return { topic, date: revDate };
+   });
+
+   addData(userId, items);
+   console.log("Saved!"), getData(userId);
 });
