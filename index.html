@@ -1,18 +1,26 @@
-<body>
-  <main>
-    <h1>Spaced Repetition Tracker</h1>
-    <label for="user-select">Select User:</label>
-    <select id="user-select">
-      <option value="">--Select a user--</option>
-    </select>
-    <div id="agenda"></div>
-    <h2>Add a new topic</h2>
-    <form id="add-topic-form">
-      <label for="topic-name">Topic Name:</label>
-      <input type="text" id="topic-name" name="topic-name" required />
-      <label for="date-input">Date:</label>
-      <input type="date" id="date-input" name="date-input" required />
-      <button type="submit">Add Topic</button>
-    </form>
-  </main>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Spaced Repetition Tracker</title>
+    <script type="module" src="script.mjs"></script>
+  </head>
+  <body>
+    <main>
+      <h1>Spaced Repetition Tracker</h1>
+      <label for="user-select">Select User:</label>
+      <select id="user-select">
+        <option value="">--Select a user--</option>
+      </select>
+      <div id="agenda"></div>
+      <h2>Add a new topic</h2>
+      <form id="add-topic-form">
+        <label for="topic-name">Topic Name:</label>
+        <input type="text" id="topic-name" name="topic-name" required />
+        <label for="date-input">Date:</label>
+        <input type="date" id="date-input" name="date-input" required />
+        <button type="submit">Add Topic</button>
+      </form>
+    </main>
+  </body>
+</html>
